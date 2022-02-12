@@ -170,9 +170,9 @@ namespace FileManagementTool {
 				| System::Windows::Forms::AnchorStyles::Left)
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->listBox->FormattingEnabled = true;
-			this->listBox->Location = System::Drawing::Point(15, 137);
+			this->listBox->Location = System::Drawing::Point(15, 150);
 			this->listBox->Name = L"listBox";
-			this->listBox->Size = System::Drawing::Size(566, 173);
+			this->listBox->Size = System::Drawing::Size(566, 160);
 			this->listBox->TabIndex = 7;
 			// 
 			// MainForm
@@ -196,6 +196,7 @@ namespace FileManagementTool {
 			this->PerformLayout();
 
 		}
+
 #pragma endregion
 	private: System::Void searchBtn_Click(System::Object^ sender, System::EventArgs^ e) {
 		FolderBrowserDialog^ folderBroswserDialog = gcnew FolderBrowserDialog;
@@ -206,23 +207,26 @@ namespace FileManagementTool {
 	private: System::Void MainForm_Load(System::Object^ sender, System::EventArgs^ e) {
 		this->duplicates->Text = "";
 	}
+	private: int getFileAndFolders(String^ dirPath) {
+		auto files = Directory::GetFiles(dirPath);
+		auto folders = Directory::GetDirectories(dirPath);
+
+		int numFiles = files->Length;
+		int numFolders = folders->Length;
+
+		for (int i = 0; i < numFiles; i++)
+			this->listBox->Items->Add(files[i]);
+		for (int i = 0; i < numFolders; i++) {
+			this->listBox->Items->Add(folders[i]);
+			numFiles += getFileAndFolders(folders[i]);
+		}
+		return numFiles;
+	}
 	private: System::Void showBtn_Click(System::Object^ sender, System::EventArgs^ e) {
 		listBox->Items->Clear();
 		String^ dirPath = this->directoryName->Text;
-		//try {
-			auto files = Directory::GetFiles(dirPath);
-			int numFiles = files->Length;
-			this->duplicates->Text = "No. of files : " + Convert::ToString(numFiles);
-
-			for (int i = 0; i < numFiles; i++)
-			{
-				this->listBox->Items->Add(files[i]);
-			}
-		
-		//}
-		//catch (Exception e) {
-		//	this->duplicates->Text = e;
-		//}
+		int AllNumFiles = getFileAndFolders(dirPath);
+		this->duplicates->Text = "No. of Files : " + Convert::ToString(AllNumFiles);
 	}
 };
 }
