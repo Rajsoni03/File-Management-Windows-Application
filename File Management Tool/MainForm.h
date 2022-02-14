@@ -22,11 +22,6 @@ namespace FileManagementTool {
 			//
 			//TODO: Add the constructor code here
 			//
-
-			folderCount = 0;
-			fileCount = 0;
-			folderCountDuplicate = 0;
-			fileCountDuplicate = 0;
 			
 		}
 
@@ -314,15 +309,16 @@ namespace FileManagementTool {
 
 		int numFiles = files->Length;
 		int numFolders = folders->Length;
-		fileCount += numFiles;
-		folderCount += numFolders;
+		
+		this->fileCount += numFiles;
+		this->folderCount += numFolders;
 
 		for (int i = 0; i < numFiles; i++){
 			if (this->listBox1->Items->Contains(FileInfo(files[i]).Name)) {
 				//this->mytable[FileInfo(files[i]).Name] = this->mytable[FileInfo(files[i]).Name] + 1;
 				this->listBox2->Items->Add(files[i]);
 				this->listBox3->Items->Add(FileInfo(files[i]).Name);
-				fileCountDuplicate++;
+				this->fileCountDuplicate++;
 			};
 			// this->mytable->Add(FileInfo(files[i]).Name, 1);
 			this->listBox1->Items->Add(FileInfo(files[i]).Name);
@@ -334,9 +330,15 @@ namespace FileManagementTool {
 		return;
 	}
 	private: System::Void showBtn_Click(System::Object^ sender, System::EventArgs^ e) {
-		listBox1->Items->Clear();
-		listBox2->Items->Clear();
-		listBox3->Items->Clear();
+		this->listBox1->Items->Clear();
+		this->listBox2->Items->Clear();
+		this->listBox3->Items->Clear();
+
+		this->folderCount = 0;
+		this->fileCount = 0;
+		this->folderCountDuplicate = 0;
+		this->fileCountDuplicate = 0;
+
 		String^ dirPath = this->directoryName->Text;
 		getFileAndFolders(dirPath);
 		this->result1->Text = "No. of Files : " + Convert::ToString(fileCount) + "\nNo. of Folders : " + Convert::ToString(folderCount);
