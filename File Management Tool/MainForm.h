@@ -39,20 +39,13 @@ namespace FileManagementTool {
 	private: System::Windows::Forms::Label^ label1;
 	private: System::Windows::Forms::TextBox^ directoryName;
 
-
-
-
-
 	private: System::Windows::Forms::Label^ Result;
 	private: System::Windows::Forms::Button^ selectBtn;
 	private: System::Windows::Forms::Label^ result1;
 
-
-
 	private: System::Windows::Forms::TableLayoutPanel^ tableLayoutPanel1;
 	private: System::Windows::Forms::Button^ showBtn;
 	private: System::Windows::Forms::ListBox^ listBox1;
-
 
 	private: System::Collections::Hashtable^ mytable;
 	private: int folderCount;
@@ -65,8 +58,6 @@ namespace FileManagementTool {
 	private: System::Windows::Forms::Label^ result2;
 	private: System::Windows::Forms::TableLayoutPanel^ tableLayoutPanel3;
 	private: System::Windows::Forms::ListBox^ listBox3;
-
-
 
 	protected:
 
@@ -120,7 +111,7 @@ namespace FileManagementTool {
 			this->directoryName->Location = System::Drawing::Point(3, 3);
 			this->directoryName->Multiline = true;
 			this->directoryName->Name = L"directoryName";
-			this->directoryName->Size = System::Drawing::Size(686, 19);
+			this->directoryName->Size = System::Drawing::Size(846, 19);
 			this->directoryName->TabIndex = 1;
 			// 
 			// Result
@@ -137,9 +128,9 @@ namespace FileManagementTool {
 			this->selectBtn->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
 				| System::Windows::Forms::AnchorStyles::Left)
 				| System::Windows::Forms::AnchorStyles::Right));
-			this->selectBtn->Location = System::Drawing::Point(695, 3);
+			this->selectBtn->Location = System::Drawing::Point(855, 3);
 			this->selectBtn->Name = L"selectBtn";
-			this->selectBtn->Size = System::Drawing::Size(168, 19);
+			this->selectBtn->Size = System::Drawing::Size(208, 19);
 			this->selectBtn->TabIndex = 4;
 			this->selectBtn->Text = L"Select Folder";
 			this->selectBtn->UseVisualStyleBackColor = true;
@@ -152,7 +143,7 @@ namespace FileManagementTool {
 			this->result1->AutoSize = true;
 			this->result1->Location = System::Drawing::Point(3, 0);
 			this->result1->Name = L"result1";
-			this->result1->Size = System::Drawing::Size(38, 27);
+			this->result1->Size = System::Drawing::Size(38, 39);
 			this->result1->TabIndex = 0;
 			this->result1->Text = L"result1";
 			// 
@@ -171,7 +162,7 @@ namespace FileManagementTool {
 			this->tableLayoutPanel1->Name = L"tableLayoutPanel1";
 			this->tableLayoutPanel1->RowCount = 1;
 			this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 50)));
-			this->tableLayoutPanel1->Size = System::Drawing::Size(866, 25);
+			this->tableLayoutPanel1->Size = System::Drawing::Size(1066, 25);
 			this->tableLayoutPanel1->TabIndex = 5;
 			// 
 			// showBtn
@@ -190,9 +181,9 @@ namespace FileManagementTool {
 				| System::Windows::Forms::AnchorStyles::Left)
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->listBox1->FormattingEnabled = true;
-			this->listBox1->Location = System::Drawing::Point(3, 30);
+			this->listBox1->Location = System::Drawing::Point(3, 42);
 			this->listBox1->Name = L"listBox1";
-			this->listBox1->Size = System::Drawing::Size(425, 355);
+			this->listBox1->Size = System::Drawing::Size(525, 511);
 			this->listBox1->TabIndex = 7;
 			// 
 			// tableLayoutPanel2
@@ -214,7 +205,7 @@ namespace FileManagementTool {
 			this->tableLayoutPanel2->RowCount = 2;
 			this->tableLayoutPanel2->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 6.905371F)));
 			this->tableLayoutPanel2->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 93.09463F)));
-			this->tableLayoutPanel2->Size = System::Drawing::Size(863, 391);
+			this->tableLayoutPanel2->Size = System::Drawing::Size(1063, 565);
 			this->tableLayoutPanel2->TabIndex = 8;
 			// 
 			// tableLayoutPanel3
@@ -227,12 +218,12 @@ namespace FileManagementTool {
 				50)));
 			this->tableLayoutPanel3->Controls->Add(this->listBox3, 0, 1);
 			this->tableLayoutPanel3->Controls->Add(this->listBox2, 0, 0);
-			this->tableLayoutPanel3->Location = System::Drawing::Point(434, 30);
+			this->tableLayoutPanel3->Location = System::Drawing::Point(534, 42);
 			this->tableLayoutPanel3->Name = L"tableLayoutPanel3";
 			this->tableLayoutPanel3->RowCount = 2;
 			this->tableLayoutPanel3->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 50)));
 			this->tableLayoutPanel3->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 50)));
-			this->tableLayoutPanel3->Size = System::Drawing::Size(426, 358);
+			this->tableLayoutPanel3->Size = System::Drawing::Size(526, 520);
 			this->tableLayoutPanel3->TabIndex = 9;
 			// 
 			// listBox3
@@ -241,9 +232,9 @@ namespace FileManagementTool {
 				| System::Windows::Forms::AnchorStyles::Left)
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->listBox3->FormattingEnabled = true;
-			this->listBox3->Location = System::Drawing::Point(3, 182);
+			this->listBox3->Location = System::Drawing::Point(3, 263);
 			this->listBox3->Name = L"listBox3";
-			this->listBox3->Size = System::Drawing::Size(420, 173);
+			this->listBox3->Size = System::Drawing::Size(520, 251);
 			this->listBox3->TabIndex = 9;
 			// 
 			// listBox2
@@ -254,7 +245,7 @@ namespace FileManagementTool {
 			this->listBox2->FormattingEnabled = true;
 			this->listBox2->Location = System::Drawing::Point(3, 3);
 			this->listBox2->Name = L"listBox2";
-			this->listBox2->Size = System::Drawing::Size(420, 173);
+			this->listBox2->Size = System::Drawing::Size(520, 251);
 			this->listBox2->TabIndex = 8;
 			// 
 			// result2
@@ -262,9 +253,9 @@ namespace FileManagementTool {
 			this->result2->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
 				| System::Windows::Forms::AnchorStyles::Left));
 			this->result2->AutoSize = true;
-			this->result2->Location = System::Drawing::Point(434, 0);
+			this->result2->Location = System::Drawing::Point(534, 0);
 			this->result2->Name = L"result2";
-			this->result2->Size = System::Drawing::Size(38, 27);
+			this->result2->Size = System::Drawing::Size(38, 39);
 			this->result2->TabIndex = 9;
 			this->result2->Text = L"result2";
 			// 
@@ -272,7 +263,7 @@ namespace FileManagementTool {
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(893, 520);
+			this->ClientSize = System::Drawing::Size(1093, 694);
 			this->Controls->Add(this->tableLayoutPanel2);
 			this->Controls->Add(this->showBtn);
 			this->Controls->Add(this->tableLayoutPanel1);
@@ -315,16 +306,14 @@ namespace FileManagementTool {
 
 		for (int i = 0; i < numFiles; i++){
 			if (this->listBox1->Items->Contains(FileInfo(files[i]).Name)) {
-				//this->mytable[FileInfo(files[i]).Name] = this->mytable[FileInfo(files[i]).Name] + 1;
 				this->listBox2->Items->Add(files[i]);
 				this->listBox3->Items->Add(FileInfo(files[i]).Name);
 				this->fileCountDuplicate++;
 			};
-			// this->mytable->Add(FileInfo(files[i]).Name, 1);
 			this->listBox1->Items->Add(FileInfo(files[i]).Name);
 		}
 		for (int i = 0; i < numFolders; i++) {
-			this->listBox1->Items->Add(folders[i]);
+			this->listBox1->Items->Add("--> " + folders[i]);
 			getFileAndFolders(folders[i]);
 		}
 		return;
